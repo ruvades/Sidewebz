@@ -122,6 +122,14 @@ footer .row > div:last-child {
         transition: clip-path 0.3s ease; /* Zachte overgang bij wijziging van clipping */
     }
 
+    .article img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.article img.ready {
+  opacity: 1;
+}
+
     /* Clipping 1: Schuine hoek */
     .random-clip-1 {
               clip-path: polygon(5% 5%, 95% 0%, 100% 95%, 0 100%);
