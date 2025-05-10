@@ -11,6 +11,15 @@ body {
     max-width: 1700px !important;
 }
 
+.navbar-brand .logo {
+  content: url('../assets/logobeige.png');
+  transition: content 0.3s ease;
+}
+
+.navbar-brand:hover .logo {
+  content: url('../assets/logobeigehover.png');
+}
+
 
 /* Verklein de padding rond de nav-items voor een compactere uitstraling */
 .nav-item {
@@ -18,6 +27,13 @@ body {
     padding-right: 10px; /* Kleinere ruimte tussen de nav-items */
 }
 
+.nav-link{
+    color: #ece8e2 !important;
+}
+
+.nav-link:hover{
+    color: #ffb951 !important;
+}
 
 /* Banner styling */
 .banner {
