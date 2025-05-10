@@ -1,4 +1,12 @@
 /* Verwijder extra ruimte rond de navbar en logo */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.baige{
+    color: #ece8e2;
+}
+
 .container {
     max-width: 1700px !important;
 }
@@ -58,11 +66,11 @@ footer .list-inline-item {
 
 footer .list-inline-item a {
     text-decoration: none;
-    color: white;
+    color: #ece8e2;
 }
 
 footer .list-inline-item a:hover {
-    color: #007bff;  /* Kleurverandering bij hover */
+    color: #ffb951;  /* Kleurverandering bij hover */
 }
 
 footer .container {
@@ -78,7 +86,8 @@ footer a {
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #ffb951;
 }
 footer .col-md-4 {
     display: flex;
@@ -113,6 +122,7 @@ footer .row > div:last-child {
     border-left: 2px solid #ddd; /* Grijze lijn aan de linkerkant van de tekst */
     border-bottom: 2px solid #ddd; /* Grijze lijn aan de onderkant van het artikel */
     min-height: 280px; /* Zorgt voor meer ruimte in de sectie */
+    font-family: "Merriweather", serif;
 }
 
 /* Algemene stijl voor afbeeldingen */
@@ -165,10 +175,12 @@ footer .row > div:last-child {
 
 /* Verhoogde schaduwen voor betere visuele diepte bij hover */
 .article:hover {
-    border-left: 2px solid #007bff;
-    border-bottom: 2px solid #007bff;
+    border-left: 2px solid #ffb951;
+    border-bottom: 2px solid #ffb951;
 }
-
+.content{
+    background-color: #ece8e2;
+}
 /* Media query voor mobiele apparaten */
 @media (max-width: 768px) {
     .banner {
