@@ -1,0 +1,21 @@
+/* Verwijder extra ruimte rond de navbar en logo */
+.container {
+    max-width: 1700px !important;
+}
+
+
+/* Verklein de padding rond de nav-items voor een compactere uitstraling */
+.nav-item {
+    padding-left: 10px; /* Kleinere ruimte tussen de nav-items */
+    padding-right: 10px; /* Kleinere ruimte tussen de nav-items */
+}
+
+
+/* Banner Image */
+.banner img {
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
