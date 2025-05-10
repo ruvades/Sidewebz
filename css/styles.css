@@ -42,6 +42,7 @@ footer {
 }
 
 footer h5 {
+    font-weight: bold;
     font-size: 1.2rem;  /* Titelgrootte voor de footer secties */
     margin-bottom: 15px;
 }
@@ -97,6 +98,41 @@ footer .row > div:last-child {
 }
 
 
+
+
+/* Verhoog de tekstgrootte en maak de sectie visueel opvallender */
+.content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #343a40; /* Donkerder voor contrast */
+}
+
+.content p {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+.content .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Stijl voor de ronde foto's */
+.content .rounded-circle {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Verhoog de spacing tussen de tekst en de afbeeldingen */
+.content .row > div {
+    margin-bottom: 30px;
+}
+
+
+
 /* Media query voor mobiele apparaten */
 @media (max-width: 768px) {
     .banner {
@@ -126,5 +162,17 @@ footer .row > div:last-child {
 
     footer ul {
         padding-left: 20px;
+    }
+        .content h1 {
+        font-size: 2.5rem; /* Kleinere tekst op kleinere schermen */
+    }
+
+    .content p {
+        font-size: 1rem; /* Kleinere tekst voor paragraaf */
+    }
+
+    .content .rounded-circle {
+        max-width: 200px; /* Kleinere afbeeldingen voor mobiel */
+        height: 200px;
     }
 }

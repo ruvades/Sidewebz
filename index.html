@@ -6,6 +6,7 @@
   <title>Sidewebz</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="css/styles.css"> <!-- Eigen CSS-bestand -->
 </head>
 <body>
@@ -45,19 +46,40 @@
         </div>
     </section>
 
-    <!-- Main Content -->
-    <section class="content py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-4">Welcome to Sidewebz</h1>
-                    <p class="lead">The web creator that puts all the other sites aside</p>
-                    <hr class="my-4">
-                    <p>At Sidewebz, we build websites with cutting-edge technology and design. Our goal is to provide our clients with an outstanding online presence, helping them stand out in a digital world. From simple portfolios to complex e-commerce platforms, we have the skills and experience to create something exceptional.</p>
-                </div>
+  <section class="content py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Welcome Text -->
+            <div class="col-12 text-center" data-aos="fade-up">
+                <h1 class="display-3 font-weight-bold">Welcome to Sidewebz</h1>
+                <p class="lead mb-4">The web creator that puts all the other sites aside</p>
+                <hr class="my-4">
+                <p class="mb-5">At Sidewebz, we build websites with cutting-edge technology and design. Our goal is to provide our clients with an outstanding online presence, helping them stand out in a digital world. From simple portfolios to complex e-commerce platforms, we have the skills and experience to create something exceptional.</p>
             </div>
         </div>
-    </section>
+
+        <!-- Image Section with Round Photos -->
+        <div class="row text-center">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Website Design" class="rounded-circle img-fluid shadow-lg">
+                <h4 class="mt-3">Web Design</h4>
+                <p>Create beautiful, responsive websites that impress.</p>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://images.unsplash.com/photo-1636247499734-893da2bcfc1c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Branding" class="rounded-circle img-fluid shadow-lg">
+                <h4 class="mt-3">Branding</h4>
+                <p>Build a strong brand identity with stunning visuals.</p>
+            </div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-Commerce" class="rounded-circle img-fluid shadow-lg">
+                <h4 class="mt-3">E-Commerce</h4>
+                <p>Transform your business with an effective online store.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 
@@ -129,5 +151,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialiseer AOS
+        AOS.init({
+            duration: 1000, // Duur van de animatie
+            easing: 'ease-in-out', // Soepele overgang
+            once: true // Alleen de eerste keer dat het element zichtbaar is
+        });
+    </script>
 </body>
 </html>
