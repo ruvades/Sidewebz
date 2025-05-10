@@ -98,40 +98,47 @@ footer .row > div:last-child {
 }
 
 
-
-
-/* Verhoog de tekstgrootte en maak de sectie visueel opvallender */
-.content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #343a40; /* Donkerder voor contrast */
-}
-
-.content p {
-    font-size: 1.25rem;
-    color: #555;
-}
-
-.content .lead {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-/* Stijl voor de ronde foto's */
-.content .rounded-circle {
+/* Stijl voor de vierkante afbeeldingen */
+.square-img {
     width: 100%;
-    max-width: 250px;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
-
-/* Verhoog de spacing tussen de tekst en de afbeeldingen */
-.content .row > div {
+/* Artikel layout */
+.article {
+    background-color: #fff;
+    padding: 20px;
     margin-bottom: 30px;
+    border-left: 2px solid #ddd; /* Grijze lijn aan de linkerkant van de tekst */
+    border-bottom: 2px solid #ddd; /* Grijze lijn aan de onderkant van het artikel */
+    min-height: 280px; /* Zorgt voor meer ruimte in de sectie */
 }
 
+.article img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
 
+.article-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Kleinere titels voor elk artikel */
+.article h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Verhoogde schaduwen voor betere visuele diepte bij hover */
+.article:hover {
+    border-left: 2px solid #007bff;
+    border-bottom: 2px solid #007bff;
+}
 
 /* Media query voor mobiele apparaten */
 @media (max-width: 768px) {
@@ -166,13 +173,18 @@ footer .row > div:last-child {
         .content h1 {
         font-size: 2.5rem; /* Kleinere tekst op kleinere schermen */
     }
-
-    .content p {
-        font-size: 1rem; /* Kleinere tekst voor paragraaf */
+    .article {
+        padding: 15px;
+        border-left: 2px solid #ccc;
     }
 
-    .content .rounded-circle {
-        max-width: 200px; /* Kleinere afbeeldingen voor mobiel */
-        height: 200px;
+    .article-text {
+        font-size: 0.9rem;
+    }
+
+    /* Zorg ervoor dat de afbeeldingen kleiner zijn op mobiel */
+    .article img {
+        max-width: 90%;
+        margin-bottom: 15px;
     }
 }
