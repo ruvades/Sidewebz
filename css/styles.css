@@ -115,11 +115,32 @@ footer .row > div:last-child {
     min-height: 280px; /* Zorgt voor meer ruimte in de sectie */
 }
 
-.article img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
+/* Algemene stijl voor afbeeldingen */
+    .article img {
+        width: 100%;
+        height: auto;
+        transition: clip-path 0.3s ease; /* Zachte overgang bij wijziging van clipping */
+    }
+
+    /* Clipping 1: Schuine hoek */
+    .random-clip-1 {
+              clip-path: polygon(5% 5%, 95% 0%, 100% 95%, 0 100%);
+    }
+
+    /* Clipping 2: Schuine hoek van de andere kant */
+    .random-clip-2 {
+          clip-path: polygon(0 10%, 90% 0, 100% 90%, 10% 100%);
+    }
+
+    /* Clipping 3: leuk*/
+    .random-clip-3 {
+            clip-path: polygon(0 0, 100% 10%, 90% 100%, 10% 90%);
+    }
+
+    /* Clipping 4: Schuine hoek met een andere richting */
+    .random-clip-4 {
+        clip-path: polygon(0 0, 70% 10%, 100% 80%, 0% 100%);
+    }
 
 .article-text {
     font-size: 1rem;
@@ -184,7 +205,7 @@ footer .row > div:last-child {
 
     /* Zorg ervoor dat de afbeeldingen kleiner zijn op mobiel */
     .article img {
-        max-width: 90%;
+        max-width: 100%;
         margin-bottom: 15px;
     }
 }
