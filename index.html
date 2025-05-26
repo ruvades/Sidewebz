@@ -64,19 +64,22 @@
       margin: 0 auto;
     }
 
-    .scroll-column {
-      flex: 1;
-      max-height: 500px;
-      overflow-y: auto;
-      padding-right: 0.5rem;
-      scroll-behavior: smooth;
-      position: relative;
-    }
+.scroll-column {
+  flex: 1;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scroll-behavior: smooth;
+  position: relative;
 
-    .scroll-column::-webkit-scrollbar {
-      width: 0;
-      background: transparent;
-    }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer/Edge */
+}
+
+.scroll-column::-webkit-scrollbar {
+  display: none;  /* Chrome/Safari */
+}
+
 
     .firstcolum {
       border-right: 2px solid white;
@@ -133,7 +136,7 @@
       }
 
       .bottom-banner h1 {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
 
@@ -194,6 +197,40 @@
 .navbar-toggler.active .bottom-bar {
   transform: rotate(-45deg);
   bottom: 45%;
+}
+
+main {
+  flex: 1;
+}
+
+main {
+  flex: 1;
+}
+
+@media (min-width: 992px) {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .scroll-columns {
+    max-width: 1400px;
+    gap: 3rem;
+  }
+
+  .scroll-column {
+    padding: 0 1rem;
+  }
+
+  .article-card {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-card h3 {
+    font-size: 1.35rem;
+  }
 }
 
   </style>
