@@ -349,29 +349,56 @@ main {
   // --- Scroll Animaties opnieuw afspelen ---
   gsap.registerPlugin(ScrollTrigger);
 
-  function animateArticlesInColumn(containerSelector) {
-    const container = document.querySelector(containerSelector);
-    const articles = container.querySelectorAll('.article-card');
+function animateArticlesInColumn(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  const articles = container.querySelectorAll('.article-card');
 
-    articles.forEach((article) => {
-      gsap.fromTo(article,
-        { opacity: 0, y: 50 },
-        {
+const isMobile = window.innerWidth <= 768;
+
+  articles.forEach((article) => {
+    gsap.set(article, { opacity: 0, y: 60 }); // Initieel onzichtbaar en lager
+
+    ScrollTrigger.create({
+      trigger: article,
+      start: 'top 90%',
+      end: 'bottom 10%',
+      scroller: isMobile ? undefined : container,
+      onEnter: () => {
+        gsap.to(article, {
           opacity: 1,
           y: 0,
-          duration: 1.0,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: article,
-            start: 'top 90%',
-            end: 'bottom 10%',
-            toggleActions: 'play none none none', // Herstart bij opnieuw in beeld
-            scroller: container
-          }
-        }
-      );
+          duration: 0.8,
+          ease: 'power2.out'
+        });
+      },
+      onLeave: () => {
+        gsap.to(article, {
+          opacity: 0,
+          y: -50,
+          duration: 0.8,
+          ease: 'power2.in'
+        });
+      },
+      onEnterBack: () => {
+        gsap.to(article, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out'
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(article, {
+          opacity: 0,
+          y: 50,
+          duration: 0.8,
+          ease: 'power2.in'
+        });
+      }
     });
-  }
+  });
+}
+
 
   animateArticlesInColumn('#left-column');
   animateArticlesInColumn('#right-column');
