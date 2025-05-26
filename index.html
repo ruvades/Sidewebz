@@ -1,244 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sidewebz</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="css/styles.css"> <!-- Eigen CSS-bestand -->
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #212529;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .navbar-brand {
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #f8f9fa;
+      color: #000;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    /* BANNER ONDER FOOTER */
+    .bottom-banner {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+
+    .bottom-banner h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    /* MAIN CONTENT */
+    .scroll-columns {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .scroll-column {
+      flex: 1;
+      max-height: 500px; /* Alleen 1 artikel zichtbaar */
+      overflow-y: auto;
+      padding-right: 0.5rem;
+      scroll-behavior: smooth;
+    }
+
+    .scroll-column::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    /* ARTICLES */
+    .article-card {
+      background-color: transparent;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 0px solid transparent;
+    }
+
+.article-card img {
+  width: 100%;
+  height: 200px;          /* vaste hoogte */
+  object-fit: cover;      /* snijdt uit en vult de container */
+  object-position: center; /* center van de afbeelding zichtbaar */
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+    .article-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #f1f1f1;
+    }
+
+    .article-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .scroll-columns {
+        flex-direction: column;
+      }
+
+      .scroll-column {
+        max-height: 600px;
+      }
+
+      .bottom-banner h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img class="logo" src="assets/logobeige.png" alt="Sidewebz" width="200">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto " >
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Clients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Banner Text -->
-    <section class="banner">
-        <div class="banner-text">
-            <h1 class="display-3 baige">Sidewebz</h1>
-            <p class="lead baige">Make your site stand aside</p>
-        </div>
-    </section>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SIDEWEBZ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/diensten">Diensten</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="bottom-banner">
+    <h1>SIDEWEBZ</h1>
+  </div>
 
-<section class="content py-5">
+  <!-- MAIN SECTION -->
+  <main class="scroll-columns">
+    <!-- LEFT COLUMN -->
+    <div class="scroll-column">
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Artikel Links 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+      </div>
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Artikel Links 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+      </div>
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Artikel Links 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="scroll-column">
+      <div class="article-card">
+        <h3>Artikel Rechts 1</h3>
+        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+      </div>
+      <div class="article-card">
+        <h3>Artikel Rechts 1</h3>
+        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+      </div>
+        <div class="article-card">
+        <h3>Artikel Rechts 1</h3>
+        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
+        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
     <div class="container">
-        <!-- Welkomsttekst -->
-        <div class="row">
-            <div class="col-md-12" data-aos="fade-up">
-                <div class="article" style="border-left: 2px solid #ccc; border-right: 2px solid #ccc; padding-left: 20px; padding-right: 20px; margin-bottom: 30px;">
-                <h1 class="display-3 font-weight-bold">Welcome to Sidewebz</h1>
-                <p class="lead mb-4">The web creator that puts all the other sites aside</p>
-                <hr class="my-4">
-                <p class="mb-5">At Sidewebz, we build websites with cutting-edge technology and design. Our goal is to provide our clients with an outstanding online presence, helping them stand out in a digital world. From simple portfolios to complex e-commerce platforms, we have the skills and experience to create something exceptional.</p>
-                </div>
-            </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-md-4 mb-3">
+          <h6 class="fw-bold">Sidewebz</h6>
+          <p class="mb-1">Webdesign met passie en oog voor detail.</p>
+          <p class="text-muted mb-0">© 2025 Sidewebz – All rights reserved.</p>
         </div>
-
-        <!-- Krantachtige sectie met meerdere artikelen -->
-        <div class="row">
-            <!-- Eerste Artikel -->
-            <div class="col-md-6"  >
-                <div class="article">
-                    <img src="https://images.unsplash.com/photo-1487338875411-8880f74114a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Design" class="img-fluid mb-3">
-                    <h4 class="font-weight-bold">Web Design</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                </div>
-            </div>
-
-            <!-- Tweede Artikel -->
-            <div class="col-md-6"  data-aos-delay="200">
-                <div class="article">
-                    <h4 class="font-weight-bold">Branding</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://plus.unsplash.com/premium_photo-1661281412140-dfb328ae967b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Branding" class="img-fluid mb-3">
-                </div>
-            </div>
+        <div class="col-md-3 mb-3">
+          <h6 class="fw-bold">Navigatie</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="/diensten" class="text-dark text-decoration-none d-block py-1">Diensten</a></li>
+            <li><a href="/contact" class="text-dark text-decoration-none d-block py-1">Contact</a></li>
+          </ul>
         </div>
-
-        <div class="row">
-            <!-- Derde Artikel -->
-            <div class="col-md-4" >
-                <div class="article">
-                    <h4 class="font-weight-bold">E-Commerce</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-Commerce" class="img-fluid mb-3">
-                </div>
-            </div>
-
-            <!-- Vierde Artikel -->
-            <div class="col-md-4"  data-aos-delay="200">
-                <div class="article">
-                    <img src="https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Creative Projects" class="img-fluid mb-3">
-                    <h4 class="font-weight-bold">Creative Projects</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                </div>
-            </div>
-
-            <!-- Vijfde Artikel -->
-            <div class="col-md-4"  data-aos-delay="400">
-                <div class="article">
-                    <h4 class="font-weight-bold">Tech Innovations</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Innovations" class="img-fluid mb-3">
-                </div>
-            </div>
+        <div class="col-md-3">
+          <h6 class="fw-bold">Volg ons</h6>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
-
-        <div class="row">
-            <!-- Zesde Artikel -->
-            <div class="col-md-6" >
-                <div class="article">
-                    <img src="https://plus.unsplash.com/premium_photo-1661270415926-37a9d24aff30?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="SEO Optimization" class="img-fluid mb-3">
-                    <h4 class="font-weight-bold">SEO Optimization</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                </div>
-            </div>
-
-            <!-- Zevende Artikel -->
-            <div class="col-md-6" data-aos-delay="200">
-                <div class="article">
-                    <h4 class="font-weight-bold">Digital Marketing</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Digital Marketing" class="img-fluid mb-3">
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Achtste Artikel -->
-            <div class="col-md-4"  >
-                <div class="article">
-                    <h4 class="font-weight-bold">App Development</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://plus.unsplash.com/premium_photo-1661326248013-3107a4b2bd91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="App Development" class="img-fluid mb-3">
-                </div>
-            </div>
-
-            <!-- Negende Artikel -->
-            <div class="col-md-4"  data-aos-delay="200">
-                <div class="article">
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="UI/UX Design" class="img-fluid mb-3">
-                    <h4 class="font-weight-bold">UI/UX Design</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                </div>
-            </div>
-
-            <!-- Tiende Artikel -->
-            <div class="col-md-4"  data-aos-delay="400">
-                <div class="article">
-                    <h4 class="font-weight-bold">Cloud Computing</h4>
-                    <p class="article-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et lectus sollicitudin, gravida velit at, varius neque. Sed dictum volutpat libero.</p>
-                    <img src="https://images.unsplash.com/photo-1561736778-92e52a7769ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud Computing" class="img-fluid mb-3">
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
+  </footer>
 
-
-
-
-
-
-
-
-
-<!-- Footer -->
-<!-- Footer -->
-<footer class="bg-dark baige py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Social Media Links -->
-            <div class="col-md-4 text-center text-md-left mb-3 mb-md-0">
-                <h5>Follow Us</h5>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com" class="baige" target="_blank">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.linkedin.com" class="baige" target="_blank">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com" class="baige" target="_blank">
-                            <i class="fab fa-facebook fa-2x"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-
-             <div class="col-md-4 text-center text-md-left">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="baige">Home</a></li>
-                    <li><a href="#" class="baige">About</a></li>
-                    <li><a href="#" class="baige">Clients</a></li>
-                    <li><a href="#" class="baige">Contact</a></li>
-                </ul>
-            </div>
-
-
-            <!-- Contact Information -->
-            <div class="col-md-4 text-center text-md-left mb-3 mb-md-0">
-                <h5>Contact Us</h5>
-                <p><strong>Email:</strong> <a href="mailto:sidewebz@telenet.be" class="baige">sidewebz@telenet.be</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+32493680736" class="baige">0493 68 07 36</a></p>
-            </div>
-        </div>
-    </div>
-    <hr class="my-4" style="border-color: #fff;">
-    <div class="text-center baige">
-        <p>&copy; 2025 Sidewebz. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<!-- FontAwesome CDN for Social Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-
-
-
-
-
-
-<!-- FontAwesome CDN for Social Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="js/script.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
