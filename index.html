@@ -79,11 +79,11 @@
     }
 
     .firstcolum {
-      border-right: 1px solid white;
+      border-right: 2px solid white;
     }
 
     .secondcolum {
-      border-left: 1px solid white;
+      border-left: 2px solid white;
     }
 
     .article-card {
@@ -99,6 +99,7 @@
     .article-card img {
       width: 100%;
       height: 200px;
+      clip-path: polygon(5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%, 0 10%);
       object-fit: cover;
       object-position: center;
       margin-bottom: 1rem;
@@ -210,7 +211,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/diensten"><strong>Diensten</strong></a></li>
+          <li class="nav-item"><a class="nav-link" href="/over"><strong>over</strong></a></li>
           <li class="nav-item"><a class="nav-link" href="/contact"><strong>Contact</strong></a></li>
         </ul>
       </div>
@@ -227,38 +228,48 @@
     <!-- LEFT COLUMN -->
     <div class="scroll-column firstcolum" id="left-column">
       <div class="article-card">
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
-        <h3>Artikel Links 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+        <img src="https://images.unsplash.com/photo-1558174685-430919a96c8d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
+        <h3>SideWebz: Build Your Side of the Web</h3>
+        <p>Welkom bij SideWebz, jouw partner in webdevelopment. Wij bouwen moderne, snelle en functionele websites op maat van jouw noden. Van kleine one-pagers tot complexe platformen met backoffice.</p>
       </div>
       <div class="article-card">
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
-        <h3>Artikel Links 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+        <img src="https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
+        <h3>One-Pagers: Simpel, krachtig & to the point</h3>
+        <p>Heb je genoeg aan één overzichtelijke webpagina? Een one-pager is perfect voor starters of duidelijke presentaties. Alles wat je wilt vertellen, op één plek. Makkelijk, snel en effectief.</p>
       </div>
       <div class="article-card">
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
-        <h3>Artikel Links 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
+        <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
+        <h3>Multi-Pagers: Meer content, strak georganiseerd</h3>
+        <p>Voor wie meer nodig heeft: pagina’s voor diensten, projecten, contact… Alles mooi gestructureerd met een duidelijke navigatie. Ideaal voor bedrijven met meerdere pijlers of diensten.</p>
+      </div>
+      <div class="article-card">
+        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
+        <h3>Met Backoffice: Jij hebt de controle</h3>
+        <p>Een website met backoffice geeft je zelf de touwtjes in handen. Voeg makkelijk nieuws, producten of content toe via een eenvoudige beheeromgeving. Efficiënt en veilig.</p>
       </div>
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="scroll-column secondcolum" id="right-column">
       <div class="article-card">
-        <h3>Artikel Rechts 1</h3>
-        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Hosting via Combell: Betrouwbaar & supersnel</h3>
+        <p>Jouw website draait op de servers van Combell, een van de beste hostingproviders in België. Altijd online, snelle laadtijden en topbeveiliging inbegrepen.</p>
+        <img src="https://www.combell.com/build/website/images/meta/combell.jpg" alt="Artikel" />
       </div>
       <div class="article-card">
-        <h3>Artikel Rechts 2</h3>
-        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Gemaakt met Node.js & Handlebars</h3>
+        <p>Wij bouwen onze sites met Node.js en Handlebars. Dat betekent snelle prestaties, flexibele ontwikkeling en een moderne, schaalbare codebasis. Geen overbodige rommel, enkel efficiëntie.</p>
+        <img src="https://railsware.com/blog/wp-content/uploads/2018/09/2400%D1%851260-rw-blog-node-js.png" alt="Artikel" />
       </div>
       <div class="article-card">
-        <h3>Artikel Rechts 3</h3>
-        <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
-        <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
+        <h3>Mobile First: Voor elk scherm geoptimaliseerd</h3>
+        <p>Elke website die we bouwen, is mobile first. Dat betekent: superscherp op mobiel, tablet én desktop. Gebruiksvriendelijkheid op elk toestel staat voorop.</p>
+        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
+      </div>
+            <div class="article-card">
+        <h3>Animaties met AOS: Subtiel en modern</h3>
+        <p>We brengen je site tot leven met AOS (Animate On Scroll). Geen drukke effecten, maar lichte, stijlvolle animaties die je content op een moderne manier laten opvallen terwijl je scrolt.</p>
+        <img src="https://images.unsplash.com/photo-1530435460869-d13625c69bbf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artikel" />
       </div>
     </div>
   </main>
@@ -275,8 +286,8 @@
         <div class="col-md-3 mb-3">
           <h6 class="fw-bold">Navigatie</h6>
           <ul class="list-unstyled mb-0">
-            <li><a href="/diensten" class="text-dark text-decoration-none d-block py-1">Diensten</a></li>
-            <li><a href="/contact" class="text-dark text-decoration-none d-block py-1">Contact</a></li>
+            <li><a href="/over" class="text-dark text-decoration-none py-1">Over</a></li>
+            <li><a href="/contact" class="text-dark text-decoration-none py-1">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-3">
@@ -333,7 +344,7 @@
   let index = 0;
 
   const cursor = document.createElement("span");
-  cursor.textContent = "|";
+  cursor.textContent = "_";
   cursor.id = "cursor";
   target.textContent = "";
   target.appendChild(cursor);
