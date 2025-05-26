@@ -8,21 +8,21 @@
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
-      background-color: #121212;
+      background-color: #1a1a1a;
       color: white;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* NAVBAR */
     nav {
-      background-color: #212529;
+      background-color: #ffffff;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
@@ -33,7 +33,6 @@
       font-weight: bold;
     }
 
-    /* FOOTER */
     footer {
       background-color: #f8f9fa;
       color: #000;
@@ -42,37 +41,36 @@
       font-size: 0.875rem;
     }
 
-    /* BANNER ONDER FOOTER */
     .bottom-banner {
       background-color: #1a1a1a;
       color: white;
-      padding: 5rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
     }
 
     .bottom-banner h1 {
-      font-size: 3rem;
+      font-size: 7rem;
       margin: 0;
-      font-weight: 700;
+      font-weight: 900;
       letter-spacing: 2px;
     }
 
-    /* MAIN CONTENT */
     .scroll-columns {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 4rem 2rem;
+      padding-bottom: 5rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .scroll-column {
       flex: 1;
-      max-height: 500px; /* Alleen 1 artikel zichtbaar */
+      max-height: 500px;
       overflow-y: auto;
       padding-right: 0.5rem;
       scroll-behavior: smooth;
+      position: relative;
     }
 
     .scroll-column::-webkit-scrollbar {
@@ -80,24 +78,32 @@
       background: transparent;
     }
 
-    /* ARTICLES */
+    .firstcolum {
+      border-right: 1px solid white;
+    }
+
+    .secondcolum {
+      border-left: 1px solid white;
+    }
+
     .article-card {
       background-color: transparent;
       border-radius: 0.75rem;
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       border: 0px solid transparent;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-.article-card img {
-  width: 100%;
-  height: 200px;          /* vaste hoogte */
-  object-fit: cover;      /* snijdt uit en vult de container */
-  object-position: center; /* center van de afbeelding zichtbaar */
-  margin-bottom: 1rem;
-  display: block;
-}
-
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 1rem;
+      display: block;
+    }
 
     .article-card h3 {
       font-size: 1.25rem;
@@ -113,43 +119,113 @@
     @media (max-width: 768px) {
       .scroll-columns {
         flex-direction: column;
+        align-items: center;
+        gap: 0rem;
       }
 
       .scroll-column {
-        max-height: 600px;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+        border: none !important;
+        width: 85% !important;
       }
 
       .bottom-banner h1 {
         font-size: 2rem;
       }
     }
+
+    /* Hamburger toggler custom style */
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+  width: 30px;    /* iets korter */
+  height: 24px;   /* iets compacter */
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  outline: none; /* outline standaard uit */
+}
+
+/* Outline ook weghalen bij focus en active */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.navbar-toggler .bar {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 24px; /* korter dan container */
+  background-color: #000;
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler .top-bar {
+  top: 0;
+}
+
+.navbar-toggler .middle-bar {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-toggler .bottom-bar {
+  bottom: 0;
+}
+
+/* Animatie naar kruisje als active */
+.navbar-toggler.active .top-bar {
+  transform: rotate(45deg);
+  top: 45%;
+}
+
+.navbar-toggler.active .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggler.active .bottom-bar {
+  transform: rotate(-45deg);
+  bottom: 45%;
+}
+
   </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">SIDEWEBZ</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="bar top-bar"></span>
+        <span class="bar middle-bar"></span>
+        <span class="bar bottom-bar"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="/diensten">Diensten</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="/diensten"><strong>Diensten</strong></a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact"><strong>Contact</strong></a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+  <!-- BANNER -->
   <div class="bottom-banner">
-    <h1>SIDEWEBZ</h1>
+    <h1 id="typewriter"></h1>
   </div>
 
   <!-- MAIN SECTION -->
   <main class="scroll-columns">
     <!-- LEFT COLUMN -->
-    <div class="scroll-column">
+    <div class="scroll-column firstcolum" id="left-column">
       <div class="article-card">
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
         <h3>Artikel Links 1</h3>
@@ -157,30 +233,30 @@
       </div>
       <div class="article-card">
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
-        <h3>Artikel Links 1</h3>
+        <h3>Artikel Links 2</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
       </div>
       <div class="article-card">
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
-        <h3>Artikel Links 1</h3>
+        <h3>Artikel Links 3</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel purus at lacus tempus tincidunt.</p>
       </div>
     </div>
 
     <!-- RIGHT COLUMN -->
-    <div class="scroll-column">
+    <div class="scroll-column secondcolum" id="right-column">
       <div class="article-card">
         <h3>Artikel Rechts 1</h3>
         <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
       </div>
       <div class="article-card">
-        <h3>Artikel Rechts 1</h3>
+        <h3>Artikel Rechts 2</h3>
         <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
       </div>
-        <div class="article-card">
-        <h3>Artikel Rechts 1</h3>
+      <div class="article-card">
+        <h3>Artikel Rechts 3</h3>
         <p>Nam fermentum, turpis nec facilisis varius, risus mauris dictum quam, vel lobortis justo risus sed lorem.</p>
         <img src="https://images.unsplash.com/photo-1747956895655-163ff55bdc6e?q=80&w=2070" alt="Artikel" />
       </div>
@@ -216,7 +292,89 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <script>
+  // --- Scroll Animaties opnieuw afspelen ---
+  gsap.registerPlugin(ScrollTrigger);
+
+  function animateArticlesInColumn(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    const articles = container.querySelectorAll('.article-card');
+
+    articles.forEach((article) => {
+      gsap.fromTo(article,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: article,
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play none none none', // Herstart bij opnieuw in beeld
+            scroller: container
+          }
+        }
+      );
+    });
+  }
+
+  animateArticlesInColumn('#left-column');
+  animateArticlesInColumn('#right-column');
+
+  const text = "SIDEWEBZ";
+  const target = document.getElementById("typewriter");
+  let index = 0;
+
+  const cursor = document.createElement("span");
+  cursor.textContent = "|";
+  cursor.id = "cursor";
+  target.textContent = "";
+  target.appendChild(cursor);
+
+  function typeNext() {
+    if (index < text.length) {
+      target.textContent = text.slice(0, index + 1);
+      target.appendChild(cursor);
+      index++;
+      setTimeout(typeNext, 250);
+    } else {
+      cursor.style.display = 'none'; // cursor weg zodra klaar
+    }
+  }
+
+  typeNext();
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    #typewriter {
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    #cursor {
+      margin-left: 5px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Hamburger toggler animatie class toggle
+  document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
