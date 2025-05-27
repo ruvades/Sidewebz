@@ -270,6 +270,10 @@ form {
   margin-bottom: 2rem;
 }
 
+.contact-info-sm {
+  margin-bottom: 2rem;
+  color: #CACACA;
+}
 
   </style>
 </head>
@@ -305,6 +309,20 @@ form {
     </div>
 
     <div class="contact-wrapper">
+<div class="contact-info-sm d-block d-md-none text-center">
+  <h5 class="mb-3">Contactgegevens</h5>
+  <p class="mb-1"><strong>Telefoon:</strong> <a href="tel:+32123456789" class="text-white text-decoration-none">+32 123 45 67 89</a></p>
+  <p class="mb-3"><strong>Email:</strong> <a href="mailto:info@sidewebz.be" class="text-white text-decoration-none">info@sidewebz.be</a></p>
+
+  <div class="d-flex justify-content-center gap-3 mt-3">
+    <a href="#" class="text-white hover-yellow fs-4"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="text-white hover-yellow fs-4"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="text-white hover-yellow fs-4"><i class="bi bi-twitter-x"></i></a>
+    <a href="#" class="text-white hover-yellow fs-4"><i class="bi bi-linkedin"></i></a>
+  </div>
+</div>
+
+
       <form action="#" method="POST" novalidate>
         <div class="form-group">
           <label for="name">Naam</label>
@@ -324,10 +342,11 @@ form {
         <button type="submit">Verstuur</button>
       </form>
 
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5005.699828646228!2d3.1621996761951108!3d51.14811873688682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c351f0919eb66d%3A0x4c9d3b8e8fcc6f23!2sTorhoutsesteenweg%2079%2C%208210%20Zedelgem!5e0!3m2!1snl!2sbe!4v1748338984187!5m2!1snl!2sbe" 
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="map-container d-none d-md-block">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5005.699828646228!2d3.1621996761951108!3d51.14811873688682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c351f0919eb66d%3A0x4c9d3b8e8fcc6f23!2sTorhoutsesteenweg%2079%2C%208210%20Zedelgem!5e0!3m2!1snl!2sbe!4v1748338984187!5m2!1snl!2sbe" 
+          width="600" height="450" style="border:0;" allowfullscreen="" 
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
     </div>
   </main>
 
@@ -414,6 +433,62 @@ form {
     this.classList.toggle('active');
   });
   </script>
+<script>
+  window.addEventListener('load', function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      gsap.from(".contact-info-sm", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".contact-info-sm",
+          start: "top 90%",
+        }
+      });
+
+      gsap.from("form", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "form",
+          start: "top 90%",
+        }
+      });
+
+    } else {
+      gsap.from("form", {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "form",
+          start: "top 90%",
+        }
+      });
+
+      gsap.from(".map-container", {
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".map-container",
+          start: "top 90%",
+        }
+      });
+    }
+  });
+</script>
 
 
 
