@@ -11,7 +11,7 @@
   <style>
     body {
       margin: 0;
-      background-color: #1a1a1a;
+      background-color: #2d2d2d;
       color: white;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -59,8 +59,8 @@
     }
 
     .intro-section img {
-      flex: 1 1 300px;
-      max-width: 300px;
+      flex: 1 1 200px;
+      max-width: 200px;
       width: 100%;
       clip-path: polygon(8% 0, 92% 0, 100% 5%, 100% 95%, 92% 100%, 8% 100%, 0 95%, 0 5%);
       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
@@ -81,11 +81,11 @@
 
     .intro-text p {
       font-size: 1.1rem;
-      color: #ccc;
+      color: #CACACA;
     }
 
     .highlight-section {
-      background: #222;
+      background: #A6A6A6;
       padding: 4rem 0;
       width: 100%;
     }
@@ -101,10 +101,10 @@
     }
 
     .feature-box {
-      background: #1a1a1a;
+      background: #2d2d2d;
       border-radius: 1rem;
       padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
       transition: transform 0.3s ease;
     }
 
@@ -115,7 +115,7 @@
     .feature-box i {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #0d6efd;
+      color: #7DC3B4;
     }
 
     .feature-box h4 {
@@ -124,12 +124,12 @@
     }
 
     .feature-box p {
-      color: #aaa;
+      color: #CACACA;
       font-size: 0.95rem;
     }
 
     .bottom-banner {
-      background-color: #1a1a1a;
+      background-color: #2d2d2d;
       color: white;
       padding: 4rem 1rem;
       text-align: center;
@@ -155,6 +155,20 @@
   outline: none; /* outline standaard uit */
 }
 
+.nav-link:hover{
+  color: #7DC3B4 !important;
+}
+
+.eye-catch{
+  color: #ffffff !important;
+}
+
+.hover-yellow{
+ transition: color 0.3s;
+}
+.hover-yellow:hover{
+  color: #7DC3B4 !important;
+}
 /* Outline ook weghalen bij focus en active */
 .navbar-toggler:focus,
 .navbar-toggler:active {
@@ -257,7 +271,7 @@
       <section class="intro-section">
         <img id="intro-image" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Over Mij">
         <div class="intro-text" id="intro-text">
-          <h1>Hallo, ik ben de kracht achter Sidewebz</h1>
+          <h1 class="eye-catch">Hallo, ik ben de kracht achter Sidewebz</h1>
           <p>
             Mijn naam is [Jouw Naam], en ik ben gepassioneerd door alles wat met web te maken heeft.
             Met jaren ervaring in front-end én back-end bouw ik niet zomaar websites, maar digitale ervaringen die presteren.
@@ -306,17 +320,17 @@
         <div class="col-md-3 mb-3">
           <h6 class="fw-bold">Navigatie</h6>
           <ul class="list-unstyled mb-0">
-            <li><a href="over.html" class="text-dark text-decoration-none py-1">Over</a></li>
-            <li><a href="contact.html" class="text-dark text-decoration-none py-1">Contact</a></li>
+            <li><a href="over.html" class="text-dark text-decoration-none py-1 hover-yellow">Over</a></li>
+            <li><a href="contact.html" class="text-dark text-decoration-none py-1 hover-yellow">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h6 class="fw-bold">Volg ons</h6>
           <div class="d-flex justify-content-center gap-3">
-            <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-dark hover-yellow"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-dark hover-yellow"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-dark hover-yellow"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-dark hover-yellow"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
       </div>
