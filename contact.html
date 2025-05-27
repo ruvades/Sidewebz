@@ -92,6 +92,7 @@ input[type="text"],
 input[type="email"],
 textarea {
   background: transparent;
+  border: 0px solid transparent;
   border-bottom: 2px solid #7DC3B4;
   color: white;
   font-size: 1rem;
@@ -231,6 +232,10 @@ textarea {
     font-size: 2rem;
   }
 
+.map-container {
+    display: none !important;
+  }
+
   .contact-wrapper {
     flex-direction: column;
     align-items: center; /* horizontaal centreren */
@@ -245,10 +250,6 @@ textarea {
 
   .form-group, .input{
     border-radius: none !important;
-  }
-  .map-container {
-    height: 83vw; /* zelfde als breedte, vierkant */
-    max-height: 450px; /* optioneel max */
   }
 
   textarea {
