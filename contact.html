@@ -88,20 +88,21 @@
       color: #CACACA;
     }
 
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid #7DC3B4;
-      color: white;
-      font-size: 1rem;
-      padding: 0.25rem 0;
-      outline: none;
-      transition: border-color 0.3s ease;
-      font-family: 'Inter', sans-serif;
-      resize: vertical;
-    }
+input[type="text"],
+input[type="email"],
+textarea {
+  background: transparent;
+  border-bottom: 2px solid #7DC3B4;
+  color: white;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  border-radius: 0 !important;     /* <-- Fix hier */      /* <-- Fix hier */
+}
+
 
     input[type="text"]:focus,
     input[type="email"]:focus,
