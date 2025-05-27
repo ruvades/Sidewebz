@@ -71,13 +71,56 @@
   scroll-behavior: smooth;
   position: relative;
 
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer/Edge */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 transparent;
 }
 
-.scroll-column::-webkit-scrollbar {
-  display: none;  /* Chrome/Safari */
+/* Kolom 1 (rechterkant scrollbar) */
+.firstcolum::-webkit-scrollbar {
+  width: 8px;
 }
+
+.firstcolum::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.firstcolum::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.firstcolum::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Kolom 2 (linkerkant scrollbar) */
+.secondcolum {
+  direction: rtl; /* Scrollbar naar links */
+}
+
+.secondcolum > * {
+  direction: ltr; /* Inhoud normaal lezen */
+}
+
+.secondcolum::-webkit-scrollbar {
+  width: 8px;
+}
+
+.secondcolum::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.secondcolum::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.secondcolum::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+
 
 
     .firstcolum {
